@@ -9,8 +9,10 @@ permissions:
   contents: read
 
 jobs:
-  lint-and-format:
+  lint:
+    name: Lint
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4

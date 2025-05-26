@@ -1,0 +1,22 @@
+name: Lint
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  - contents: read
+
+jobs:
+  lint-and-format:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install deps
+        run: npm install
+
+      - name: Prettier
+        run: npx prettier --check .

@@ -1,0 +1,21 @@
+name: Danger?
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  danger:
+    name: Danger?
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Danger?
+        run: ./build.sh

@@ -12,10 +12,12 @@ jobs:
   danger:
     name: Danger?
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ github.token }}
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
       - name: Danger?
-        run: ./build.sh
+        run: ./build.sh ${{ github.event.pull_request.id }}
